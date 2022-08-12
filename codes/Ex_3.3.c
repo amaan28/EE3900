@@ -26,6 +26,11 @@ int main()
     }
     //for(int i=0;i<20;i++)
         //printf(y[i]);
+    FILE *fptr;
+    fptr=fopen("y.txt","w");
+    for(int i=0;i<20;i++)
+        fprintf(fptr,"%f \n",y[i]);
+    fclose(fptr);
     _Bool success;
 
 	RGBABitmapImageReference *canvasReference = CreateRGBABitmapImageReference();
