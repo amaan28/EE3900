@@ -2,6 +2,11 @@ import numpy as np
 from scipy.fft import fft, ifft
 import matplotlib.pyplot as plt
 
+# If using termux
+# import subprocess
+# import shlex
+# end if
+
 N = 18
 n = np.arange(N)
 fn = (-1 / 2) ** n
@@ -21,5 +26,11 @@ plt.xlabel('$n$')
 plt.ylabel('$y(n)$')
 plt.grid()  # minor
 
-np.savetxt("./Ex_6.4.txt", y)
+np.savetxt("./prob-6-4.txt", y)
+# If using termux
+plt.savefig('../figs/prob_6-4.png')
+plt.savefig('../figs/prob_6-4.eps')
+plt.savefig('../figs/prob_6-4.pdf')
+# subprocess.run(shlex.split("termux-open ../figs/yndft.pdf"))
+# else
 plt.show()
